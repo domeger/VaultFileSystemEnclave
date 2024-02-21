@@ -10,13 +10,11 @@
 # Instance Preparation 
 Complete the steps in our docs to be able to complete this step by step setup of Vault with Consul storage.
 
-![1]([https://github.com/domeger/Anjuna-VaultWithConsul/main/1.png](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png))
 
-[![2](https://github.com/domeger/Anjuna-VaultWithConsul/main/2.png)](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png)
-
-[![3](https://github.com/domeger/Anjuna-VaultWithConsul/main/3.png)](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png)
-
-[![4](https://github.com/domeger/Anjuna-VaultWithConsul/main/4.png)](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png)
+![Nitro 1](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png)
+![Nitro 2](https://github.com/domeger/VaultFileSystemEnclave/blob/main/2.png)
+![Nitro 3](https://github.com/domeger/VaultFileSystemEnclave/blob/main/3.png)
+![Nitro 4](https://github.com/domeger/VaultFileSystemEnclave/blob/main/4.png)
 
 **Getting Started:**
 
