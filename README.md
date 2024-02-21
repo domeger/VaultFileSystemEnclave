@@ -30,9 +30,10 @@ Go into your install.sh and replace <apikey> with your API key from the [Anjuna 
 
 `./run.sh`
 
-**Step 2:**
+**Step 2:** 
 
 # Vault Client Setup
+
 **Step 1:**
 `sudo yum install -y yum-utils`
 
