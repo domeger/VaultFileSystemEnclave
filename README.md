@@ -9,7 +9,7 @@
 
 # Instance Preparation 
 
-**Create Your EC2 Instance Using the Following:**
+**Create Your EC2 Instance Using the Following Setting:**
 
 ![Nitro 1](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png)
 ![Nitro 2](https://github.com/domeger/VaultFileSystemEnclave/blob/main/2.png)
