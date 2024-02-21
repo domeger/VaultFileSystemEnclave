@@ -1,7 +1,7 @@
 [![GitHub Release](https://img.shields.io/github/release/dani-garcia/vaultwarden.svg)](https://github.com/domeger/Anjuna-VaultWithConsul/releases/latest)
 [![GPL-3.0 Licensed](https://img.shields.io/github/license/dani-garcia/vaultwarden.svg)](https://www.gnu.org/licenses/gpl-3.0.txt)
 
-# Anjuna Security: Hashicorp Vault with Consul
+# Anjuna Security: Hashicorp Vault
 
 **Requirements:** Amazon AMI\
 **Technologies:** Vault, Consul, Anjuna Runtime, and Docker\
