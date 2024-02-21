@@ -1,0 +1,10 @@
+Found config version 1.0. For the latest, use: "version: 1.7"
+Syntax check of "enclave-config.yaml" passed
+{
+  "Measurements": {
+    "HashAlgorithm": "Sha384 { ... }",
+    "PCR0": "55623d3d91079c8f9ddf083a8f5e20f33955e75f8baf0ced6f0355fe823ae1103d792ef89d700fa2ad80be77ee25ee6a",
+    "PCR1": "6fbec60e4a158ca5d41655ec90a67213856f35e97f16cf7241b138f5b328a6421a6f8f898d865797cfcad128bb45480f",
+    "PCR2": "61ba6acd65fb33b4a3c799019198b0ce95121cbe1a7cd78d882efead57152a7a2b48ecfb8d900b87abd8b903d6a281ef"
+  }
+}

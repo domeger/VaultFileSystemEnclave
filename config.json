@@ -1,0 +1,12 @@
+SKIP_SETCAP = true
+disable_mlock = true
+
+storage "file" {
+  path = "vault-storage"
+}
+
+listener "tcp" {
+  address = ":8200"	
+  tls_disable = 1
+}
+
