@@ -8,8 +8,8 @@
 **Instance Type:** m5.xlarge or higher instance
 
 # Instance Preparation 
-Complete the steps in our docs to be able to complete this step by step setup of Vault with Consul storage.
 
+**Create Your EC2 Instance Using the Following:**
 
 ![Nitro 1](https://github.com/domeger/VaultFileSystemEnclave/blob/main/1.png)
 ![Nitro 2](https://github.com/domeger/VaultFileSystemEnclave/blob/main/2.png)
@@ -21,6 +21,10 @@ Complete the steps in our docs to be able to complete this step by step setup of
 **Step 1:**
 
 Run the following commands:
+
+Go into your install.sh and replace <apikey> with your API key from the [Anjuna Resource Center](https://downloads.anjuna.io)
+
+`./install.sh`
 
 `./build.sh`
 
