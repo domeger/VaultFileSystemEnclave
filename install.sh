@@ -35,7 +35,7 @@ sleep 1
 echo "Installing AWS Nitro Runtime"
 echo "---------------------------"
 wget https://api.downloads.anjuna.io/v1/releases/anjuna-nitro-runtime.1.36.0003.tar.gz \
---header="X-Anjuna-Auth-Token:ad913f86-90b1-45d1-b1ea-b057299fadfa"
+--header="X-Anjuna-Auth-Token:<api-token>"
 
 sudo mkdir -p /opt/anjuna/nitro
 sudo tar -xvoz -C /opt/anjuna/nitro -f anjuna-nitro-runtime.1.36.0003.tar.gz
@@ -44,7 +44,7 @@ echo "Installing AWS Nitro Runtime License"
 echo "---------------------------"
 cd /opt/anjuna/
 sudo wget https://api.downloads.anjuna.io/v1/releases/license/nitro/license.yaml \
---header="X-Anjuna-Auth-Token:ad913f86-90b1-45d1-b1ea-b057299fadfa"
+--header="X-Anjuna-Auth-Token:<api-token>"
 
 echo "Installing Docker"
 echo "---------------------------"
