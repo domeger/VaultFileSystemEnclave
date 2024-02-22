@@ -18,11 +18,6 @@ cat << "EOF"
  ▀         ▀  ▀        ▀▀  ▀▀▀▀▀▀▀      ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀         ▀  ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
 EOF
 
-#=================================
-ANJ_API_TOKEN=<API_TOKEN_FROM_ANJUNA_RESOURCE_CENTER>
-ANJ_LATEST_RT=$(curl https://api.downloads.anjuna.io/v1/releases/nitro -s -H "X-Anjuna-Auth-Token:${ANJ_API_TOKEN}" | jq '."products" | .[0].artifacts | .[].filename' | grep runtime | sed 's/\"//g')
-#=================================
-
 echo "Installing AWS Linux Extra"
 echo "---------------------------"
 sudo amazon-linux-extras install -y aws-nitro-enclaves-cli
@@ -30,15 +25,11 @@ echo "Installing AWS Nitro Dev and OpenSSL Env"
 sudo yum install -y aws-nitro-enclaves-cli-devel jq openssl11-libs
 sleep 1
 
-echo "Modifying EC2 User"
-echo "---------------------------"
-sudo usermod -aG ne ec2-user
-echo "Adding EC2-USER to Docker Group"
-sudo usermod -aG docker ec2-user
-sleep 1
-
 echo "Installing AWS Nitro Runtime"
 echo "---------------------------"
+ANJ_API_TOKEN=<API_TOKEN_FROM_ANJUNA_RESOURCE_CENTER>
+ANJ_LATEST_RT=$(curl https://api.downloads.anjuna.io/v1/releases/nitro -s -H "X-Anjuna-Auth-Token:${ANJ_API_TOKEN}" | jq '."products" | .[0].artifacts | .[].filename' | grep runtime | sed 's/\"//g')
+
 wget https://api.downloads.anjuna.io/v1/releases/${ANJ_LATEST_RT} \
 --header="X-Anjuna-Auth-Token:${ANJ_API_TOKEN}"
 
@@ -56,9 +47,15 @@ echo "---------------------------"
 sudo yum install -y docker
 sleep 1
 
-echo "Enable Docker"
+echo "Enabling Docker"
 echo "---------------------------"
 sudo systemctl enable docker
+sleep 1
+
+echo "Modifying EC2 User"
+echo "---------------------------"
+sudo usermod -aG ne ec2-user
+sudo usermod -aG docker ec2-user
 sleep 1
 
 echo "Enable Kernel Module"
