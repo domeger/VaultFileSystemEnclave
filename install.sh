@@ -18,6 +18,11 @@ cat << "EOF"
  ▀         ▀  ▀        ▀▀  ▀▀▀▀▀▀▀      ▀▀▀▀▀▀▀▀▀▀▀  ▀        ▀▀  ▀         ▀  ▀  ▀▀▀▀▀▀▀▀▀▀▀  ▀▀▀▀▀▀▀▀▀▀▀ 
 EOF
 
+#=================================
+ANJ_API_TOKEN=<API_TOKEN_FROM_ANJUNA_RESOURCE_CENTER>
+ANJ_LATEST_RT=$(curl https://api.downloads.anjuna.io/v1/releases/nitro -s -H "X-Anjuna-Auth-Token:${ANJ_API_TOKEN}" | jq '."products" | .[0].artifacts | .[].filename' | grep runtime | sed 's/\"//g')
+#=================================
+
 echo "Installing AWS Linux Extra"
 echo "---------------------------"
 sudo amazon-linux-extras install -y aws-nitro-enclaves-cli
@@ -34,17 +39,17 @@ sleep 1
 
 echo "Installing AWS Nitro Runtime"
 echo "---------------------------"
-wget https://api.downloads.anjuna.io/v1/releases/anjuna-nitro-runtime.1.36.0003.tar.gz \
---header="X-Anjuna-Auth-Token:<api-token>"
+wget https://api.downloads.anjuna.io/v1/releases/${ANJ_LATEST_RT} \
+--header="X-Anjuna-Auth-Token:${ANJ_API_TOKEN}"
 
 sudo mkdir -p /opt/anjuna/nitro
-sudo tar -xvoz -C /opt/anjuna/nitro -f anjuna-nitro-runtime.1.36.0003.tar.gz
+sudo tar -xvoz -C /opt/anjuna/nitro -f ${ANJ_LATEST_RT}
 
 echo "Installing AWS Nitro Runtime License"
 echo "---------------------------"
 cd /opt/anjuna/
 sudo wget https://api.downloads.anjuna.io/v1/releases/license/nitro/license.yaml \
---header="X-Anjuna-Auth-Token:<api-token>"
+--header="X-Anjuna-Auth-Token:${ANJ_API_TOKEN}"
 
 echo "Installing Docker"
 echo "---------------------------"
