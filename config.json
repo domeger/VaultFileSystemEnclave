@@ -2,7 +2,7 @@ SKIP_SETCAP = true
 disable_mlock = true
 
 storage "file" {
-  path = "vault-storage"
+  path = "/vault/file/vault-storage"
 }
 
 listener "tcp" {
